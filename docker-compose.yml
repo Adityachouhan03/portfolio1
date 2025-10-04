@@ -1,0 +1,26 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - backend
+    networks:
+      - portfolio
+
+  backend:
+    build: ./backend
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - CORS_ORIGIN=http://localhost
+    networks:
+      - portfolio
+
+networks:
+  portfolio:
+    driver: bridge

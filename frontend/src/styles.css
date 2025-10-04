@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--panel-bg: rgba(20, 20, 28, 0.6);
+}
+
+[data-theme='light'] body {
+	background-color: #f6f7fb;
+	color: #0f172a;
+}
+
+.glass-panel {
+	@apply rounded-2xl backdrop-blur bg-black/40 border border-white/10 shadow-xl;
+}
+
+
